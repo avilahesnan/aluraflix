@@ -5,6 +5,13 @@ from apps.aluraflix.models import Program
 
 
 class ProgramsViewSet(viewsets.ModelViewSet):
+    '''
+    View all Programs.
+
+    Returns:
+        List of all programs.
+    '''
+
     queryset = Program.objects.all()
     serializer_class = ProgramSerializer
     filter_backends = [DjangoFilterBackend, filters.SearchFilter]
