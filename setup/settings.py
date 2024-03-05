@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'storages',
     'admin_honeypot',
     'django_filters',
+    'drf_yasg',
 ]
 
 MIDDLEWARE = [

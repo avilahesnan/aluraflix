@@ -12,8 +12,9 @@ class ProgramsViewSet(viewsets.ModelViewSet):
         List of all programs.
     '''
 
-    queryset = Program.objects.all()
+    queryset = Program.objects.all().order_by('title')
     serializer_class = ProgramSerializer
-    filter_backends = [DjangoFilterBackend, filters.SearchFilter]
+    filter_backends = [DjangoFilterBackend, filters.OrderingFilter, filters.SearchFilter]  # noqa: E501
+    ordering_fields = ['title']
     search_fields = ['title']
     filterset_fields = ['type']
